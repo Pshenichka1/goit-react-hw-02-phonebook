@@ -1,15 +1,15 @@
-import { Field, Formik, Form, ErrorMessage } from "formik";
-import * as yup from 'yup';
+import { Formik, ErrorMessage } from "formik";
+// import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import { Component } from "react";
 
 import { FormContact, Label, Input, Button } from "../ContactForm/styled";
 
-const schema = yup.object().shape({
-    name: yup.string().required(),
-    number: yup.string().required().max(15),
-})
+// const schema = yup.object().shape({
+//     name: yup.string().required(),
+//     number: yup.string().required().max(15),
+// })
 
 const initialValues = {
     name: '',
@@ -31,7 +31,7 @@ export class ContactForm extends Component {
     render() {
         return (
             <Formik initialValues={initialValues}
-                validationSchema={schema}
+                // validationSchema={schema}
                 onSubmit={this.handleSubmit}>
                 <FormContact autoComplete="off">
                     <Label htmlFor="name">Name
